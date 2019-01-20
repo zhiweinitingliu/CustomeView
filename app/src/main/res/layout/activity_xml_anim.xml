@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFFFFFF">
+
+    <LinearLayout
+        android:id="@+id/ll_top_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_alpha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="alpha"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+
+        <Button
+            android:id="@+id/btn_scale"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="scale"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+
+        <Button
+            android:id="@+id/btn_rotate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="rotate"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+
+        <Button
+            android:id="@+id/btn_translate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="translate"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_second_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_top_btn">
+
+        <Button
+            android:id="@+id/btn_set"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="set"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="reset"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_control_img"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorEEEEEE"
+        android:src="@mipmap/ic_girl_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_second_btn" />
+
+</android.support.constraint.ConstraintLayout>

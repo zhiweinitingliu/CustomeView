@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1500"
+    android:fillAfter="true"
+    android:fillBefore="false"
+    android:fromXScale="1"
+    android:fromYScale="1"
+    android:pivotX="50%"
+    android:pivotY="0"
+    android:toXScale="3"
+    android:toYScale="3">
+
+
+    <!--android:duration="1500"  动画执行的时间-->
+    <!--android:fillAfter="true"  true 动画执行完 保持执行完的效果-->
+    <!--android:fillBefore="true"  true 动画执行完 保持开始前的效果 -->
+    <!--android:fromXScale="1"   开始执行动画是 x轴的缩放比例  1 从原始宽度开始缩放-->
+    <!--android:fromYScale="1"   开始执行动画是 y轴的缩放比例  1 从原始高度开始缩放-->
+    <!--android:pivotX="50%"     执行缩放时相对于自身的x坐标-->
+    <!--android:pivotY="0"     执行缩放时相对于自身的y坐标-->
+    <!--android:toXScale="3"  x轴缩放倍数-->
+    <!--android:toYScale="3"  y轴缩放倍数-->
+
+</scale>

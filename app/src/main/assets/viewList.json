@@ -1,0 +1,10 @@
+[
+  {
+    "type": "xml_anim",
+    "name": "XML基础动画"
+  },
+  {
+    "type": "view2",
+    "name": "自定义控件2"
+  }
+]
