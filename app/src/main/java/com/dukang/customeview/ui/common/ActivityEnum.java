@@ -1,5 +1,8 @@
 package com.dukang.customeview.ui.common;
 
+import com.dukang.customeview.ui.activity.GraphViewActivity;
+import com.dukang.customeview.ui.activity.ValueAnimatorActivity;
+import com.dukang.customeview.ui.activity.XFermodeActivity;
 import com.dukang.customeview.ui.activity.XmlAnimActivity;
 
 /**
@@ -13,6 +16,9 @@ import com.dukang.customeview.ui.activity.XmlAnimActivity;
 public enum ActivityEnum {
 
     xmlAnimActivity("xml_anim", XmlAnimActivity.class),
+    valueAnimatorActivity("value_animator", ValueAnimatorActivity.class),
+    graphViewActivity("graph_view", GraphViewActivity.class),
+    xFermodeActivity("paint_xfermode", XFermodeActivity.class),
     error("error", null);
 
     private String type;

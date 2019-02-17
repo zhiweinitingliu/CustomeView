@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_top_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_start_anim"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开始动画"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+
+        <Button
+            android:id="@+id/btn_remove_listener"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="移除监听"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+
+        <Button
+            android:id="@+id/btn_add_listener"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="添加监听"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+
+        <Button
+            android:id="@+id/btn_cancel_anim"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消动画"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_control_img"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_girl_2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_top_btn" />
+
+</android.support.constraint.ConstraintLayout>

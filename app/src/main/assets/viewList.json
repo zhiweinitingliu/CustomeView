@@ -4,7 +4,15 @@
     "name": "XML基础动画"
   },
   {
-    "type": "view2",
-    "name": "自定义控件2"
+    "type": "value_animator",
+    "name": "属性动画 ValueAnimator"
+  },
+  {
+    "type": "paint_xfermode",
+    "name": "Paint 方法xfermode"
+  },
+  {
+    "type": "graph_view",
+    "name": "基础图形绘制"
   }
 ]

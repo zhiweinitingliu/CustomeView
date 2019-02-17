@@ -79,6 +79,18 @@
             android:textAllCaps="false"
             android:textColor="@color/color333333" />
 
+        <Button
+            android:id="@+id/btn_java_complete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="java代码实现"
+            android:textAllCaps="false"
+            android:textColor="@color/color333333" />
+
     </LinearLayout>
 
     <ImageView

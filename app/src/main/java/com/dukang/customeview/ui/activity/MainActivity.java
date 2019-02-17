@@ -6,22 +6,23 @@ import android.view.View;
 import com.dukang.customeview.R;
 import com.dukang.customeview.base.BaseActivity;
 import com.dukang.customeview.common.recyclerview.BaseRecyclerViewAdapter;
-import com.dukang.customeview.common.recyclerview.ItemDivider;
-import com.dukang.customeview.common.recyclerview.QuickItemDecoration;
+import com.dukang.customeview.common.recyclerview.DefaultItemDecoration;
 import com.dukang.customeview.common.recyclerview.RecyclerViewUtil;
 import com.dukang.customeview.common.utils.IntentManager;
 import com.dukang.customeview.common.utils.JsonUtil;
+import com.dukang.customeview.common.utils.ToastUtil;
 import com.dukang.customeview.common.utils.Util;
 import com.dukang.customeview.ui.adapter.ViewListAdapter;
 import com.dukang.customeview.ui.bean.CustomeViewBean;
 import com.dukang.customeview.ui.common.ActivityEnum;
+import com.dukang.customeview.ui.view.SwipeRecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
-    private RecyclerView recyclerView;
-    private QuickItemDecoration quickItemDecoration;
+    private SwipeRecyclerView recyclerView;
     private ViewListAdapter viewListAdapter;
 
 
@@ -34,10 +35,7 @@ public class MainActivity extends BaseActivity {
     public void initView() {
         recyclerView = findViewById(R.id.recyclerView);
         RecyclerViewUtil.initLinearLayoutManager(recyclerView, activity);
-        quickItemDecoration = new QuickItemDecoration(new ItemDivider()
-                .setColor(getResources().getColor(R.color.colorF6F6F6))
-                .setWidth(40));
-        recyclerView.addItemDecoration(quickItemDecoration);
+        recyclerView.addItemDecoration(new DefaultItemDecoration(getResources().getColor(R.color.colorF6F6F6)));
         viewListAdapter = new ViewListAdapter(activity);
         recyclerView.setAdapter(viewListAdapter);
     }
@@ -50,28 +48,47 @@ public class MainActivity extends BaseActivity {
                 jumpToAnimPage(position);
             }
         });
+
+        recyclerView.setLoadMoreListener(new SwipeRecyclerView.LoadMoreListener() {
+            @Override
+            public void onLoadMore() {
+                ToastUtil.toast("我在加载更多...");
+                loadData();
+            }
+        });
     }
 
-    List<CustomeViewBean> customeViewBeanList;
+    private void loadData() {
+        recyclerView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String json = Util.getJson("viewList.json");
+                List<CustomeViewBean> resultCustomeViewBeanList = JsonUtil.fastJsonToArray(json, CustomeViewBean.class);
+                customerViewBeanList.addAll(resultCustomeViewBeanList);
+                recyclerView.loadMoreFinish(false, true);
+                viewListAdapter.setData(customerViewBeanList);
+                viewListAdapter.notifyDataSetChanged();
+            }
+        }, 1000);
+    }
+
+    List<CustomeViewBean> customerViewBeanList;
 
     @Override
     public void initData() {
-        String json = Util.getJson("viewList.json");
-        customeViewBeanList = JsonUtil.fastJsonToArray(json, CustomeViewBean.class);
-        viewListAdapter.setData(customeViewBeanList);
-        viewListAdapter.notifyDataSetChanged();
+        customerViewBeanList = new ArrayList<>();
+        loadData();
+//        String json = Util.getJson("viewList.json");
+//        customeViewBeanList = JsonUtil.fastJsonToArray(json, CustomeViewBean.class);
+//        viewListAdapter.setData(customeViewBeanList);
+//        viewListAdapter.notifyDataSetChanged();
     }
 
     private void jumpToAnimPage(int position) {
-
-        CustomeViewBean customeViewBean = customeViewBeanList.get(position);
+        CustomeViewBean customeViewBean = customerViewBeanList.get(position);
         ActivityEnum activityEnum = ActivityEnum.getActivityEnum(customeViewBean.getType());
-
-        switch (activityEnum) {
-            case xmlAnimActivity:
-                IntentManager.startActivity(this, XmlAnimActivity.class);
-                break;
+        if (activityEnum != ActivityEnum.error) {
+            IntentManager.startActivity(activity, activityEnum.getClazz());
         }
-
     }
 }
