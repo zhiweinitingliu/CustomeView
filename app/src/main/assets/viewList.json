@@ -12,6 +12,10 @@
     "name": "Paint 方法xfermode"
   },
   {
+    "type": "paint_qq_red_point",
+    "name": "QQ 红点拖拽"
+  },
+  {
     "type": "graph_view",
     "name": "基础图形绘制"
   }

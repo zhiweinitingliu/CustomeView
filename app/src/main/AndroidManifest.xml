@@ -24,6 +24,7 @@
         <activity android:name=".ui.activity.ValueAnimatorActivity" />
         <activity android:name=".ui.activity.GraphViewActivity" />
         <activity android:name=".ui.activity.XFermodeActivity" />
+        <activity android:name=".ui.activity.QQRedPointActivity" />
     </application>
 
 </manifest>
