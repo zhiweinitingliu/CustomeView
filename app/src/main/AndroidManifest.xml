@@ -25,6 +25,7 @@
         <activity android:name=".ui.activity.GraphViewActivity" />
         <activity android:name=".ui.activity.XFermodeActivity" />
         <activity android:name=".ui.activity.QQRedPointActivity" />
+        <activity android:name=".ui.activity.WalterFallActivity" />
     </application>
 
 </manifest>

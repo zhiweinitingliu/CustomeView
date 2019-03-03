@@ -3,6 +3,7 @@ package com.dukang.customeview.ui.common;
 import com.dukang.customeview.ui.activity.GraphViewActivity;
 import com.dukang.customeview.ui.activity.QQRedPointActivity;
 import com.dukang.customeview.ui.activity.ValueAnimatorActivity;
+import com.dukang.customeview.ui.activity.WalterFallActivity;
 import com.dukang.customeview.ui.activity.XFermodeActivity;
 import com.dukang.customeview.ui.activity.XmlAnimActivity;
 
@@ -21,6 +22,7 @@ public enum ActivityEnum {
     graphViewActivity("graph_view", GraphViewActivity.class),
     xFermodeActivity("paint_xfermode", XFermodeActivity.class),
     qqRedPointActivity("paint_qq_red_point", QQRedPointActivity.class),
+    walterFallActivity("walter_fall", WalterFallActivity.class),
     error("error", null);
 
     private String type;

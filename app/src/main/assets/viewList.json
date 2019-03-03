@@ -16,6 +16,10 @@
     "name": "QQ 红点拖拽"
   },
   {
+    "type": "walter_fall",
+    "name": "瀑布流"
+  },
+  {
     "type": "graph_view",
     "name": "基础图形绘制"
   }
